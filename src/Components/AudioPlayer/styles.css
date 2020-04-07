@@ -1,0 +1,35 @@
+.rhap_container {
+    display: flex;
+    line-height: 1;
+    font-family: inherit;
+}
+.rhap_main-controls {
+    flex: 0 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rhap_additional-controls {
+    display: none
+}
+.rhap_rewind-button {
+    display: none
+}
+.rhap_forward-button {
+    display: none
+}
+.rhap_main-controls-button {
+    margin: 0 3px;
+    font-size: 35px;
+    width: 35px;
+    height: 35px;
+    color: #ffffff;
+  }
+.rhap_play-pause-button {
+    display: flex;
+    background-color: #28a745;
+    border: none;
+    padding: .25rem .5rem;
+    border-radius: .2rem;
+    font-size: 30px;
+}
