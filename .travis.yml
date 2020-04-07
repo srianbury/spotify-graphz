@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+  - node_modules
+script:
+  - npm run build
+env:
+  REACT_APP_SPOTIFY_CLIENT_ID: $REACT_APP_SPOTIFY_CLIENT_ID
+  REACT_APP_SENTRY_DSN: $REACT_APP_SENTRY_DSN
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  edge: true
+  local_dir: build
+  on:
+    branch: master
