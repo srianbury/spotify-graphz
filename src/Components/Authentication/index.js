@@ -38,7 +38,7 @@ const Authentication = ({ children }) => {
       const { expires_at } = storedUser.spotifyAuth; // i.e. 2020-04-01T07:54:20.347Z
       const expDate = new Date(expires_at);
       if (new Date() >= expDate) {
-        login();
+        setUser(AUTH_STATES.NOT_LOGGED_IN);
       } else {
         setUser(storedUser); // (prev) => ({ ...prev, ...storedUser })
       }
