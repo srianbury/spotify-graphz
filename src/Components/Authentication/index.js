@@ -15,7 +15,7 @@ const Authentication = ({ children }) => {
     ];
     const paramsObj = {
       client_id: process.env.REACT_APP_SPOTIFY_CLIENT_ID,
-      redirect_uri: `${window.location.origin}/callback`,
+      redirect_uri: `${window.location.href}/callback`,
       scope: scopes.join('%20'),
       response_type: 'token',
       state: 123,
