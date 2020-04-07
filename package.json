@@ -1,6 +1,7 @@
 {
   "name": "spotify-graphz",
   "version": "0.1.0",
+  "homepage": "https://srianbury.github.io/spotify-graphz/",
   "private": true,
   "dependencies": {
     "@sentry/browser": "^5.15.4",
