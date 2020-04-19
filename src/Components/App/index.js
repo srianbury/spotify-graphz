@@ -20,7 +20,7 @@ import withErrorBoundary, {
 } from '../ErrorBoundary';
 
 const AppContainer = () => (
-  <Router basename={ROUTES.HOME}>
+  <Router basename={process.env.PUBLIC_URL}>
     <App />
   </Router>
 );
