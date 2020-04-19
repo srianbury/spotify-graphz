@@ -6,7 +6,6 @@ const Authentication = ({ children }) => {
   const [user, setUser] = useState(AUTH_STATES.INIT); // AUTH_STATES.INIT
 
   function login() {
-    setUser(AUTH_STATES.NOT_LOGGED_IN);
     const base = 'https://accounts.spotify.com/authorize';
     const scopes = [
       'user-read-email',
@@ -15,7 +14,7 @@ const Authentication = ({ children }) => {
     ];
     const paramsObj = {
       client_id: process.env.REACT_APP_SPOTIFY_CLIENT_ID,
-      redirect_uri: `${window.location.href}/callback`,
+      redirect_uri: `${window.location.href}callback`,
       scope: scopes.join('%20'),
       response_type: 'token',
       state: 123,
