@@ -6,6 +6,11 @@ const Authentication = ({ children }) => {
   const [user, setUser] = useState(AUTH_STATES.INIT); // AUTH_STATES.INIT
 
   function login() {
+    function getRedirectBase() {
+      return process.env.NODE_ENV === 'production'
+        ? 'https://srianbury.github.io/spotify-graphz/callback'
+        : 'http://localhost:3000/callback';
+    }
     const base = 'https://accounts.spotify.com/authorize';
     const scopes = [
       'user-read-email',
@@ -14,7 +19,7 @@ const Authentication = ({ children }) => {
     ];
     const paramsObj = {
       client_id: process.env.REACT_APP_SPOTIFY_CLIENT_ID,
-      redirect_uri: `${window.location.href}callback`,
+      redirect_uri: getRedirectBase(),
       scope: scopes.join('%20'),
       response_type: 'token',
       state: 123,
