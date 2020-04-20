@@ -9,7 +9,7 @@ const Authentication = ({ children }) => {
     function getRedirectBase() {
       return process.env.NODE_ENV === 'production'
         ? 'https://srianbury.github.io/spotify-graphz/callback'
-        : 'http://localhost:3000/callback';
+        : 'http://localhost:3000/spotify-graphz/callback';
     }
     const base = 'https://accounts.spotify.com/authorize';
     const scopes = [
