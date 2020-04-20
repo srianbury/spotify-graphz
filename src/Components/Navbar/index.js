@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { UserContext } from '../Authentication';
 import Login from '../Login';
 import withInit from '../Init';
+import { ROUTES } from '../../Constants';
 
 const HeaderContainer = () => {
   const { isAuthenticated } = useContext(UserContext);
@@ -12,7 +13,7 @@ const HeaderContainer = () => {
 
 const HeaderView = ({ isAuthenticated }) => (
   <Navbar bg="light" expand="md">
-    <Navbar.Brand href="/">Graphz n Sh</Navbar.Brand>
+    <Navbar.Brand href={ROUTES.HOME}>Graphz n Sh</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="mr-auto"></Nav>
@@ -42,7 +43,7 @@ const UserProfileContainer = () => {
   );
 };
 const UserProfileView = ({ username, image }) => (
-  <Link className="btn btn-sm btn-outline-dark" to="/profile">
+  <Link className="btn btn-sm btn-outline-dark" to={ROUTES.PROFILE}>
     {`${username} `}
     <img
       src={image}
